@@ -1,0 +1,8 @@
+int main()
+{
+    float i = .0e3;
+
+
+    return 0;
+}
+
