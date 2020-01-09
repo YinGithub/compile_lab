@@ -32,10 +32,15 @@ void yyerror(char *s);
 %token WHILE 
 %token TYPE
 %token ID 
-%right ASSIGNOP 
+%right ASSIGNOP
+%left OR
+%left AND 
+%left RELOP
 %left PLUS MINUS
 %left STAR DIV
-%left NOT
+%left NOT MINUS
+%right COMMA DOT
+
 
 %%
 //High Level
