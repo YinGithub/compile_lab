@@ -1,0 +1,13 @@
+//there is a comment
+ /*i*/
+// /*this is a single comment*/
+int main () {
+int a,b /* this is okay*/;
+a = 3;
+b = a + 4;
+while(a < /* >_< ////// ///// */ b) {
+a = a + a;
+b = b + 4;
+}
+return a;
+}
