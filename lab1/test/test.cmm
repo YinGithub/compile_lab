@@ -1,5 +1,0 @@
-int Wrong() 
-{ 
-int Correct; 
-return 1; 
-}

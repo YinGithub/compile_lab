@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "stdarg.h": "c",
-        "main.h": "c",
-        "syntax.tab.h": "c",
-        "string.h": "c"
-    }
-}
