@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 3 "./syntax.y" /* yacc.c:339  */
+#line 3 "syntax.y" /* yacc.c:339  */
 
 
 	#define YYSTYPE unsigned long 
@@ -74,7 +74,7 @@ void yyerror(const char *s);
 
 
 
-#line 78 "./syntax.tab.c" /* yacc.c:339  */
+#line 78 "syntax.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -170,7 +170,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 174 "./syntax.tab.c" /* yacc.c:358  */
+#line 174 "syntax.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1458,367 +1458,367 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 56 "./syntax.y" /* yacc.c:1646  */
+#line 56 "syntax.y" /* yacc.c:1646  */
     {p_tree_start = (struct non_terminal_tokens *)new_non_terminal_node(ID_PROGRAM,(yyloc),1,(yyvsp[0]));}
-#line 1464 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1464 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 58 "./syntax.y" /* yacc.c:1646  */
+#line 58 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXTDEFLIST,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1470 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1470 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 59 "./syntax.y" /* yacc.c:1646  */
+#line 59 "syntax.y" /* yacc.c:1646  */
     {(yyval) = (YYSTYPE)NULL;}
-#line 1476 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1476 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 61 "./syntax.y" /* yacc.c:1646  */
+#line 61 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXTDEF,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1482 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1482 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 62 "./syntax.y" /* yacc.c:1646  */
+#line 62 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXTDEF,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1488 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1488 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 63 "./syntax.y" /* yacc.c:1646  */
+#line 63 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXTDEF,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1494 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1494 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 66 "./syntax.y" /* yacc.c:1646  */
+#line 66 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXTDECLIST,(yyloc),1,(yyvsp[0]));}
-#line 1500 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1500 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 67 "./syntax.y" /* yacc.c:1646  */
+#line 67 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXTDECLIST,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1506 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1506 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 71 "./syntax.y" /* yacc.c:1646  */
+#line 71 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_SPECIFIER,(yyloc),1,(yyvsp[0]));}
-#line 1512 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1512 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 72 "./syntax.y" /* yacc.c:1646  */
+#line 72 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_SPECIFIER,(yyloc),1,(yyvsp[0]));}
-#line 1518 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1518 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 74 "./syntax.y" /* yacc.c:1646  */
+#line 74 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STRUCTSPECIFIER,(yyloc),5,(yyvsp[-4]),(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1524 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1524 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 75 "./syntax.y" /* yacc.c:1646  */
+#line 75 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STRUCTSPECIFIER,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1530 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1530 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 77 "./syntax.y" /* yacc.c:1646  */
+#line 77 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_OPTTAG,(yyloc),1,(yyvsp[0]));}
-#line 1536 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1536 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 78 "./syntax.y" /* yacc.c:1646  */
+#line 78 "syntax.y" /* yacc.c:1646  */
     {(yyval) = (YYSTYPE)NULL;}
-#line 1542 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1542 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 80 "./syntax.y" /* yacc.c:1646  */
+#line 80 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_TAG,(yyloc),1,(yyvsp[0]));}
-#line 1548 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1548 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 84 "./syntax.y" /* yacc.c:1646  */
+#line 84 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_VARDEC,(yyloc),1,(yyvsp[0]));}
-#line 1554 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1554 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 85 "./syntax.y" /* yacc.c:1646  */
+#line 85 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_VARDEC,(yyloc),4,(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1560 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1560 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 87 "./syntax.y" /* yacc.c:1646  */
+#line 87 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_FUNDEC,(yyloc),4,(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1566 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1566 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 88 "./syntax.y" /* yacc.c:1646  */
+#line 88 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_FUNDEC,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1572 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1572 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 91 "./syntax.y" /* yacc.c:1646  */
+#line 91 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_VARLIST,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1578 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1578 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 92 "./syntax.y" /* yacc.c:1646  */
+#line 92 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_VARLIST,(yyloc),1,(yyvsp[0]));}
-#line 1584 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1584 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 94 "./syntax.y" /* yacc.c:1646  */
+#line 94 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_PARAMDEC,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1590 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1590 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 98 "./syntax.y" /* yacc.c:1646  */
+#line 98 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_COMPST,(yyloc),4,(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1596 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1596 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 101 "./syntax.y" /* yacc.c:1646  */
+#line 101 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STMTLIST,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1602 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1602 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 102 "./syntax.y" /* yacc.c:1646  */
+#line 102 "syntax.y" /* yacc.c:1646  */
     {(yyval) = (YYSTYPE)NULL;}
-#line 1608 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1608 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 104 "./syntax.y" /* yacc.c:1646  */
+#line 104 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STMT,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1614 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1614 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 105 "./syntax.y" /* yacc.c:1646  */
+#line 105 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STMT,(yyloc),1,(yyvsp[0]));}
-#line 1620 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1620 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 106 "./syntax.y" /* yacc.c:1646  */
+#line 106 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STMT,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1626 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1626 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 107 "./syntax.y" /* yacc.c:1646  */
+#line 107 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STMT,(yyloc),5,(yyvsp[-4]),(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1632 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1632 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 108 "./syntax.y" /* yacc.c:1646  */
+#line 108 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STMT,(yyloc),6,(yyvsp[-6]),(yyvsp[-5]),(yyvsp[-4]),(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]));}
-#line 1638 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1638 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 109 "./syntax.y" /* yacc.c:1646  */
+#line 109 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_STMT,(yyloc),5,(yyvsp[-4]),(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1644 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1644 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 110 "./syntax.y" /* yacc.c:1646  */
+#line 110 "syntax.y" /* yacc.c:1646  */
     { yyerrok;}
-#line 1650 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1650 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 117 "./syntax.y" /* yacc.c:1646  */
+#line 117 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_DEFLIST,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1656 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1656 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 118 "./syntax.y" /* yacc.c:1646  */
+#line 118 "syntax.y" /* yacc.c:1646  */
     {(yyval) = (YYSTYPE)NULL;}
-#line 1662 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1662 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 120 "./syntax.y" /* yacc.c:1646  */
+#line 120 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_DEF,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1668 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1668 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 121 "./syntax.y" /* yacc.c:1646  */
+#line 121 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_DEF,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1674 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1674 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 123 "./syntax.y" /* yacc.c:1646  */
+#line 123 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_DECLIST,(yyloc),1,(yyvsp[0]));}
-#line 1680 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1680 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 124 "./syntax.y" /* yacc.c:1646  */
+#line 124 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_DECLIST,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1686 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1686 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 126 "./syntax.y" /* yacc.c:1646  */
+#line 126 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_DEC,(yyloc),1,(yyvsp[0]));}
-#line 1692 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1692 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 127 "./syntax.y" /* yacc.c:1646  */
+#line 127 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_DEC,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1698 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1698 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 131 "./syntax.y" /* yacc.c:1646  */
+#line 131 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1704 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1704 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 132 "./syntax.y" /* yacc.c:1646  */
+#line 132 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1710 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1710 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 133 "./syntax.y" /* yacc.c:1646  */
+#line 133 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1716 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1716 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 134 "./syntax.y" /* yacc.c:1646  */
+#line 134 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1722 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1722 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 135 "./syntax.y" /* yacc.c:1646  */
+#line 135 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1728 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1728 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 136 "./syntax.y" /* yacc.c:1646  */
+#line 136 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1734 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1734 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 137 "./syntax.y" /* yacc.c:1646  */
+#line 137 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1740 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1740 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 138 "./syntax.y" /* yacc.c:1646  */
+#line 138 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1746 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1746 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 139 "./syntax.y" /* yacc.c:1646  */
+#line 139 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1752 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1752 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 140 "./syntax.y" /* yacc.c:1646  */
+#line 140 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1758 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1758 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 141 "./syntax.y" /* yacc.c:1646  */
+#line 141 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),2,(yyvsp[-1]),(yyvsp[0]));}
-#line 1764 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1764 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 142 "./syntax.y" /* yacc.c:1646  */
+#line 142 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),4,(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1770 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1770 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 143 "./syntax.y" /* yacc.c:1646  */
+#line 143 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1776 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1776 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 144 "./syntax.y" /* yacc.c:1646  */
+#line 144 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),4,(yyvsp[-3]),(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1782 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1782 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 145 "./syntax.y" /* yacc.c:1646  */
+#line 145 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1788 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1788 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 146 "./syntax.y" /* yacc.c:1646  */
+#line 146 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),1,(yyvsp[0]));}
-#line 1794 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1794 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 147 "./syntax.y" /* yacc.c:1646  */
+#line 147 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),1,(yyvsp[0]));}
-#line 1800 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1800 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 148 "./syntax.y" /* yacc.c:1646  */
+#line 148 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_EXP,(yyloc),1,(yyvsp[0]));}
-#line 1806 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1806 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 151 "./syntax.y" /* yacc.c:1646  */
+#line 151 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_ARGS,(yyloc),3,(yyvsp[-2]),(yyvsp[-1]),(yyvsp[0]));}
-#line 1812 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1812 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 152 "./syntax.y" /* yacc.c:1646  */
+#line 152 "syntax.y" /* yacc.c:1646  */
     {(yyval) = new_non_terminal_node(ID_ARGS,(yyloc),1,(yyvsp[0]));}
-#line 1818 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1818 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1822 "./syntax.tab.c" /* yacc.c:1646  */
+#line 1822 "syntax.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2053,7 +2053,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 155 "./syntax.y" /* yacc.c:1906  */
+#line 155 "syntax.y" /* yacc.c:1906  */
 
 
 	 
