@@ -1,5 +1,6 @@
 
 %{
+  #define YYSTYPE unsigned long 
 #include "syntax.tab.h" 
 #include "main.h"
 int yycolumn = 1;

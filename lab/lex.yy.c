@@ -526,6 +526,7 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "./lexical.l"
 #line 3 "./lexical.l"
+  #define YYSTYPE unsigned long 
 #include "syntax.tab.h" 
 #include "main.h"
 int yycolumn = 1;
@@ -534,7 +535,7 @@ int yycolumn = 1;
  yylloc.first_column = yycolumn; \
  yylloc.last_column = yycolumn + yyleng - 1; \
 yycolumn += yyleng;  
-#line 538 "./lex.yy.c"
+#line 539 "./lex.yy.c"
 
 #define INITIAL 0
 
@@ -721,9 +722,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 13 "./lexical.l"
+#line 14 "./lexical.l"
 
-#line 727 "./lex.yy.c"
+#line 728 "./lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -808,172 +809,172 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "./lexical.l"
+#line 15 "./lexical.l"
 {}
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 15 "./lexical.l"
+#line 16 "./lexical.l"
 {int i = 0;while(i<yyleng){if(yytext[i] == '\n') yylineno++;i++;}}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "./lexical.l"
+#line 17 "./lexical.l"
 {yylval = new_terminal_node_with_value(ID_INT,yytext) ;return INT;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "./lexical.l"
+#line 18 "./lexical.l"
 { yylval = new_terminal_node_with_value(ID_FLOAT,yytext); return FLOAT;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "./lexical.l"
+#line 19 "./lexical.l"
 {yylval = new_terminal_node(ID_SEMI);return SEMI;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "./lexical.l"
+#line 20 "./lexical.l"
 {yylval = new_terminal_node(ID_COMMA);return COMMA;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 20 "./lexical.l"
+#line 21 "./lexical.l"
 {yylval = new_terminal_node(ID_ASSIGNOP);return ASSIGNOP;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 21 "./lexical.l"
+#line 22 "./lexical.l"
 {yylval = new_terminal_node(ID_RELOP);return RELOP;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 22 "./lexical.l"
+#line 23 "./lexical.l"
 {yylval = new_terminal_node(ID_PLUS);return PLUS;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 23 "./lexical.l"
+#line 24 "./lexical.l"
 {yylval = new_terminal_node(ID_MINUS);return MINUS;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 24 "./lexical.l"
+#line 25 "./lexical.l"
 {yylval = new_terminal_node(ID_STAR);return STAR;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 25 "./lexical.l"
+#line 26 "./lexical.l"
 {yylval = new_terminal_node(ID_DIV);return DIV;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 26 "./lexical.l"
+#line 27 "./lexical.l"
 {yylval = new_terminal_node(ID_AND);return AND;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 27 "./lexical.l"
+#line 28 "./lexical.l"
 {yylval = new_terminal_node(ID_OR);return OR;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 28 "./lexical.l"
+#line 29 "./lexical.l"
 {yylval = new_terminal_node(ID_DOT);return DOT;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 29 "./lexical.l"
+#line 30 "./lexical.l"
 {yylval = new_terminal_node(ID_NOT);return NOT;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 30 "./lexical.l"
+#line 31 "./lexical.l"
 {yylval = new_terminal_node(ID_LP);return LP;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 31 "./lexical.l"
+#line 32 "./lexical.l"
 {yylval = new_terminal_node(ID_RP);return RP;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 32 "./lexical.l"
+#line 33 "./lexical.l"
 {yylval = new_terminal_node(ID_LB);return LB;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 33 "./lexical.l"
+#line 34 "./lexical.l"
 {yylval = new_terminal_node(ID_RB);return RB;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 34 "./lexical.l"
+#line 35 "./lexical.l"
 {yylval = new_terminal_node(ID_LC);return LC;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 35 "./lexical.l"
+#line 36 "./lexical.l"
 {yylval = new_terminal_node(ID_RC);return RC;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 36 "./lexical.l"
+#line 37 "./lexical.l"
 {yylval = new_terminal_node(ID_STRUCT);return STRUCT;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 37 "./lexical.l"
+#line 38 "./lexical.l"
 {yylval = new_terminal_node(ID_RETURN);return RETURN;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 38 "./lexical.l"
+#line 39 "./lexical.l"
 {yylval = new_terminal_node(ID_IF);return IF;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 39 "./lexical.l"
+#line 40 "./lexical.l"
 {yylval = new_terminal_node(ID_ELSE);return ELSE;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 40 "./lexical.l"
+#line 41 "./lexical.l"
 {yylval = new_terminal_node(ID_WHILE);return WHILE;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 41 "./lexical.l"
+#line 42 "./lexical.l"
 {yylval = new_terminal_node_with_value(ID_TYPE,yytext);return TYPE;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 42 "./lexical.l"
+#line 43 "./lexical.l"
 {yylval = new_terminal_node_with_value(ID_ID,yytext);return ID;}
 	YY_BREAK
 case 30:
 /* rule 30 can match eol */
 YY_RULE_SETUP
-#line 43 "./lexical.l"
+#line 44 "./lexical.l"
 {yycolumn = 1;yylineno++; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 44 "./lexical.l"
+#line 45 "./lexical.l"
 {}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 45 "./lexical.l"
+#line 46 "./lexical.l"
 { printf("Error type A at Line %d: Mysterious characters \'%s\'\n",yylineno,yytext); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 46 "./lexical.l"
+#line 47 "./lexical.l"
 ECHO;
 	YY_BREAK
-#line 977 "./lex.yy.c"
+#line 978 "./lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1971,7 +1972,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 46 "./lexical.l"
+#line 47 "./lexical.l"
 
 
 /*
