@@ -13,16 +13,18 @@ char * token_name[] = {
               };
 
 
-struct non_terminal_tokens *  p_tree_start;
+Token_Node  p_tree_start;
 int syntax_err = 0;
 #define YYSTYPE unsigned long 
-YYSTYPE new_terminal_node(int token_id)
+YYSTYPE new_terminal_node(int token_id,YYLTYPE loc)
 {
-  struct non_terminal_tokens * p ;
-  p = malloc(sizeof(struct terminal_tokens));
+  Token_Node p ;
+  p = malloc(sizeof(struct token_node_));
   p->id = token_id;
   p->type = TERMINAL;
+  p->loc = loc;
   p->next_bro = NULL;
+  p->first_child = NULL;
   return (YYSTYPE)p;
 }
 int hex_toint(char * hex_str)
@@ -65,12 +67,13 @@ int oct_toint(char * oct_str)
   }
   return sum ;
 }
-YYSTYPE new_terminal_node_with_value(int token_id,char * value)
+YYSTYPE new_terminal_node_with_value(int token_id,YYLTYPE loc,char * value)
 {
-  struct terminal_tokens * p ;
-  p = malloc(sizeof(struct terminal_tokens));
+  Token_Node p ;
+  p = malloc(sizeof(struct token_node_));
   p->id = token_id;
   p->type = TERMINAL;
+  p->loc = loc;
   if(token_id == ID_FLOAT)
   {
     (p->value).fval = atof(value);
@@ -97,11 +100,12 @@ YYSTYPE new_terminal_node_with_value(int token_id,char * value)
     strcpy((p->value).sval,value);
   }
   p->next_bro = NULL;
+  p->first_child = NULL;
   return (YYSTYPE)p;
 
 }
 
-
+/*
 YYSTYPE new_float_node(int token_id,float value)
 {
   struct terminal_tokens * p ;
@@ -135,46 +139,52 @@ YYSTYPE new_type_node(int token_id, char * str)
   p->next_bro = NULL;
   return (YYSTYPE)p;
 }
-
+*/
 YYSTYPE new_non_terminal_node(int token_id,YYLTYPE loc,int child_num,...)
 {
+  /*
   struct non_terminal_tokens * p;
   struct basic_tokens * p_var;
+  */
+  Token_Node p;
+  Token_Node p_child;
   int i;
   va_list valist;
-  p = malloc(sizeof(struct non_terminal_tokens));
+  p = malloc(sizeof(struct token_node_));
   p->type = NON_TERMINAL;
   p->id = token_id;
   p->loc = loc;
   va_start(valist, child_num);
-  p_var = va_arg(valist, struct basic_tokens *);
-  p->children = p_var;
+  p_child = va_arg(valist, struct token_node_ *);
+  p->first_child = p_child;
   for (i = 0; i < (child_num-1); i++)
   {
-    p_var->next_bro = va_arg(valist, struct basic_tokens *);
-    p_var = p_var->next_bro;
-    if(p_var == NULL)
+    p_child->next_bro = va_arg(valist, struct token_node_ *);
+    p_child = p_child->next_bro;
+    if(p_child == NULL)
       break;
   }
   va_end(valist);
   return (YYSTYPE) p;
 
 }
-void pretty_print(struct basic_tokens * p_node ,int space_num)
+void pretty_print(Token_Node p_node ,int space_num)
 {
 
   if (p_node == NULL)
     return ;
+  Token_Node p =  p_node;
   if(p_node->type == NON_TERMINAL)
   {
-    struct non_terminal_tokens * p =  (struct non_terminal_tokens * )p_node;
+   if(p_node->first_child == NULL)
+      return; 
   //  printf("$$next bro addr%ld ",(unsigned long)p->next_bro);
     if(space_num > 0)
       printf("%*s",space_num," ");
     printf("%s",token_name[p->id]);
     printf("%s"," ");
     printf("(%d)\n",p->loc.first_line);
-   struct basic_tokens * p_child = p->children;
+   Token_Node p_child = p->first_child;
    while(p_child)
    {
      pretty_print(p_child,space_num + 2);
@@ -184,7 +194,6 @@ void pretty_print(struct basic_tokens * p_node ,int space_num)
   else
   {
     /* terminal node */
-    struct terminal_tokens * p = (struct terminal_tokens *)p_node;
  //   printf("$$next bro addr%ld ",(unsigned long)p->next_bro);
     printf("%*s",space_num," ");
     printf("%s",token_name[p->id]);
@@ -200,6 +209,7 @@ void pretty_print(struct basic_tokens * p_node ,int space_num)
   
     
 } 
+void semantic_parse(Token_Node p_tree_start);
 int main(int argc, char **argv) 
 { 
   FILE* f; 
@@ -214,7 +224,11 @@ int main(int argc, char **argv)
   //yydebug =  1;
   yyparse();
   if(syntax_err == 0)
-    pretty_print((struct basic_tokens * )p_tree_start,0);
+  {
+    pretty_print(p_tree_start,0);
+    semantic_parse(p_tree_start);
+  }
+
 
   return 0;
 }

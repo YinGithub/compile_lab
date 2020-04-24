@@ -56,11 +56,12 @@ void yyerror(const char *s);
 Program: ExtDefList	{p_tree_start = (struct non_terminal_tokens *)new_non_terminal_node(ID_PROGRAM,@$,1,$1);}
 	;
 ExtDefList: ExtDef ExtDefList {$$ = new_non_terminal_node(ID_EXTDEFLIST,@$,2,$1,$2);}
-	|		{$$ = (YYSTYPE)NULL;}
+	|		{$$ = new_non_terminal_node(ID_EXTDEFLIST,@$,1,NULL);}
 	;
 ExtDef: Specifier ExtDecList SEMI {$$ = new_non_terminal_node(ID_EXTDEF,@$,3,$1,$2,$3);}
 	| Specifier SEMI 	{$$ = new_non_terminal_node(ID_EXTDEF,@$,2,$1,$2);}
 	| Specifier FunDec CompSt 	  {$$ = new_non_terminal_node(ID_EXTDEF,@$,3,$1,$2,$3);}
+	| Specifier FunDec SEMI 	  {$$ = new_non_terminal_node(ID_EXTDEF,@$,3,$1,$2,$3);}
 	| error SEMI 
 	; 
 ExtDecList:VarDec	{$$ = new_non_terminal_node(ID_EXTDECLIST,@$,1,$1);}
@@ -75,7 +76,7 @@ StructSpecifier: STRUCT OptTag LC DefList RC {$$ = new_non_terminal_node(ID_STRU
 	| STRUCT Tag  {$$ = new_non_terminal_node(ID_STRUCTSPECIFIER,@$,2,$1,$2);}
 	;
 OptTag: ID  {$$ = new_non_terminal_node(ID_OPTTAG,@$,1,$1);}
-	|	{$$ = (YYSTYPE)NULL;}
+	|	{$$ = new_non_terminal_node(ID_OPTTAG,@$,1,NULL);}
 	;
 Tag:ID   {$$ = new_non_terminal_node(ID_TAG,@$,1,$1);}
 	;
@@ -99,13 +100,13 @@ CompSt: LC DefList StmtList RC {$$ = new_non_terminal_node(ID_COMPST,@$,4,$1,$2,
 	| error RC
 	;
 StmtList: Stmt StmtList {$$ = new_non_terminal_node(ID_STMTLIST,@$,2,$1,$2);}
-	|	{$$ = (YYSTYPE)NULL;}
+	|	{$$ = new_non_terminal_node(ID_STMTLIST,@$,1,NULL);}
 	;
 Stmt: Exp SEMI  {$$ = new_non_terminal_node(ID_STMT,@$,2,$1,$2);}
 	| CompSt {$$ = new_non_terminal_node(ID_STMT,@$,1,$1);}
 	| RETURN Exp SEMI {$$ = new_non_terminal_node(ID_STMT,@$,3,$1,$2,$3);}
 	| IF LP Exp RP Stmt %prec LOWER_THAN_ELSE	{$$ = new_non_terminal_node(ID_STMT,@$,5,$1,$2,$3,$4,$5);}
-	| IF LP Exp RP Stmt ELSE Stmt {$$ = new_non_terminal_node(ID_STMT,@$,6,$1,$2,$3,$4,$5,$6);}
+	| IF LP Exp RP Stmt ELSE Stmt {$$ = new_non_terminal_node(ID_STMT,@$,7,$1,$2,$3,$4,$5,$6,$7);}
 	| WHILE LP Exp RP Stmt {$$ = new_non_terminal_node(ID_STMT,@$,5,$1,$2,$3,$4,$5);}
 	| error SEMI { yyerrok;}
 	| IF LP error RP Stmt %prec LOWER_THAN_ELSE
@@ -115,7 +116,7 @@ Stmt: Exp SEMI  {$$ = new_non_terminal_node(ID_STMT,@$,2,$1,$2);}
 
 //Local Definitions 
 DefList: Def DefList	 {$$ = new_non_terminal_node(ID_DEFLIST,@$,2,$1,$2);}
-	|	{$$ = (YYSTYPE)NULL;}
+	|	{$$ = new_non_terminal_node(ID_DEFLIST,@$,1,NULL);}
 	;
 Def: Specifier DecList SEMI {$$ = new_non_terminal_node(ID_DEF,@$,3,$1,$2,$3);}
 	| Specifier error SEMI {$$ = new_non_terminal_node(ID_DEF,@$,3,$1,$2,$3);}

@@ -3,6 +3,9 @@
         "stdarg.h": "c",
         "main.h": "c",
         "syntax.tab.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "limits": "c",
+        "assert.h": "c",
+        "symbol.h": "c"
     }
 }

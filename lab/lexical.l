@@ -1,5 +1,6 @@
 
 %{
+  #define YYSTYPE unsigned long 
 #include "syntax.tab.h" 
 #include "main.h"
 int yycolumn = 1;
@@ -13,33 +14,33 @@ yycolumn += yyleng;
 %%
 "//".*   {}
 \/\*([^*]|(\*+[^*/]))*\*+\/ {int i = 0;while(i<yyleng){if(yytext[i] == '\n') yylineno++;i++;}}
-[1-9][0-9]*|0[xX][0-9A-Fa-f]+|0[0-7]*		{yylval = new_terminal_node_with_value(ID_INT,yytext) ;return INT;}
-((([0-9]+\.[0-9]*)|([0-9]*\.[0-9]+))[eE][+-]?[0-9]+)|((0|[1-9][0-9]*)\.[0-9]+) { yylval = new_terminal_node_with_value(ID_FLOAT,yytext); return FLOAT;}
-";"     {yylval = new_terminal_node(ID_SEMI);return SEMI;}
-","     {yylval = new_terminal_node(ID_COMMA);return COMMA;}
-"="     {yylval = new_terminal_node(ID_ASSIGNOP);return ASSIGNOP;}
-">"|"<"|">="|"<="|"=="|"!=" {yylval = new_terminal_node(ID_RELOP);return RELOP;}
-"+"     {yylval = new_terminal_node(ID_PLUS);return PLUS;}
-"-"     {yylval = new_terminal_node(ID_MINUS);return MINUS;}
-"*"	    {yylval = new_terminal_node(ID_STAR);return STAR;}
-"/"     {yylval = new_terminal_node(ID_DIV);return DIV;}
-"&&"    {yylval = new_terminal_node(ID_AND);return AND;}
-"||"    {yylval = new_terminal_node(ID_OR);return OR;}
-"."     {yylval = new_terminal_node(ID_DOT);return DOT;}
-"!"     {yylval = new_terminal_node(ID_NOT);return NOT;}
-"("     {yylval = new_terminal_node(ID_LP);return LP;}
-")"     {yylval = new_terminal_node(ID_RP);return RP;}
-"["     {yylval = new_terminal_node(ID_LB);return LB;}
-"]"     {yylval = new_terminal_node(ID_RB);return RB;}
-"{"     {yylval = new_terminal_node(ID_LC);return LC;}
-"}"     {yylval = new_terminal_node(ID_RC);return RC;}
-"struct"    {yylval = new_terminal_node(ID_STRUCT);return STRUCT;}
-"return"    {yylval = new_terminal_node(ID_RETURN);return RETURN;}
-"if"        {yylval = new_terminal_node(ID_IF);return IF;}
-"else"      {yylval = new_terminal_node(ID_ELSE);return ELSE;}
-"while"     {yylval = new_terminal_node(ID_WHILE);return WHILE;}
-"int"|"float" {yylval = new_terminal_node_with_value(ID_TYPE,yytext);return TYPE;}
-[_A-Za-z]([_0-9A-Za-z])* {yylval = new_terminal_node_with_value(ID_ID,yytext);return ID;}
+[1-9][0-9]*|0[xX][0-9A-Fa-f]+|0[0-7]*		{yylval = new_terminal_node_with_value(ID_INT,yylloc,yytext) ;return INT;}
+((([0-9]+\.[0-9]*)|([0-9]*\.[0-9]+))[eE][+-]?[0-9]+)|((0|[1-9][0-9]*)\.[0-9]+) { yylval = new_terminal_node_with_value(ID_FLOAT,yylloc,yytext); return FLOAT;}
+";"     {yylval = new_terminal_node(ID_SEMI,yylloc);return SEMI;}
+","     {yylval = new_terminal_node(ID_COMMA,yylloc);return COMMA;}
+"="     {yylval = new_terminal_node(ID_ASSIGNOP,yylloc);return ASSIGNOP;}
+">"|"<"|">="|"<="|"=="|"!=" {yylval = new_terminal_node(ID_RELOP,yylloc);return RELOP;}
+"+"     {yylval = new_terminal_node(ID_PLUS,yylloc);return PLUS;}
+"-"     {yylval = new_terminal_node(ID_MINUS,yylloc);return MINUS;}
+"*"	    {yylval = new_terminal_node(ID_STAR,yylloc);return STAR;}
+"/"     {yylval = new_terminal_node(ID_DIV,yylloc);return DIV;}
+"&&"    {yylval = new_terminal_node(ID_AND,yylloc);return AND;}
+"||"    {yylval = new_terminal_node(ID_OR,yylloc);return OR;}
+"."     {yylval = new_terminal_node(ID_DOT,yylloc);return DOT;}
+"!"     {yylval = new_terminal_node(ID_NOT,yylloc);return NOT;}
+"("     {yylval = new_terminal_node(ID_LP,yylloc);return LP;}
+")"     {yylval = new_terminal_node(ID_RP,yylloc);return RP;}
+"["     {yylval = new_terminal_node(ID_LB,yylloc);return LB;}
+"]"     {yylval = new_terminal_node(ID_RB,yylloc);return RB;}
+"{"     {yylval = new_terminal_node(ID_LC,yylloc);return LC;}
+"}"     {yylval = new_terminal_node(ID_RC,yylloc);return RC;}
+"struct"    {yylval = new_terminal_node(ID_STRUCT,yylloc);return STRUCT;}
+"return"    {yylval = new_terminal_node(ID_RETURN,yylloc);return RETURN;}
+"if"        {yylval = new_terminal_node(ID_IF,yylloc);return IF;}
+"else"      {yylval = new_terminal_node(ID_ELSE,yylloc);return ELSE;}
+"while"     {yylval = new_terminal_node(ID_WHILE,yylloc);return WHILE;}
+"int"|"float" {yylval = new_terminal_node_with_value(ID_TYPE,yylloc,yytext);return TYPE;}
+[_A-Za-z]([_0-9A-Za-z])* {yylval = new_terminal_node_with_value(ID_ID,yylloc,yytext);return ID;}
 \n      {yycolumn = 1;yylineno++; }
 \t|" "  {}
 .     { printf("Error type A at Line %d: Mysterious characters \'%s\'\n",yylineno,yytext); }

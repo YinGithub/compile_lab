@@ -19,7 +19,7 @@ typedef union
   float fval;
   char * sval;
   }
-u_val;
+U_VAL;/*
 struct basic_tokens
 {
   int type;
@@ -31,26 +31,28 @@ struct terminal_tokens
   int type;
   int id;
   struct basic_tokens * next_bro;
-  u_val value;
+  U_VAL value;
 };
+*/
 
-struct non_terminal_tokens
+struct token_node_
 {
   int type;
   int id;
-  struct basic_tokens * next_bro;
+  struct token_node_ * next_bro;
   YYLTYPE loc;
-  struct basic_tokens * children;
+  struct token_node_ * first_child;
+  U_VAL value;
 };
-
+typedef struct token_node_ * Token_Node;  
 extern char * token_name[] ;
-struct non_terminal_tokens *  p_tree_start;
+Token_Node p_tree_start;
 
-YYSTYPE new_terminal_node(int token_id);
+YYSTYPE new_terminal_node(int token_id,YYLTYPE loc);
 YYSTYPE new_float_node(int token_id,float value);
 YYSTYPE new_int_node(int token_id,int value);
 YYSTYPE new_type_node(int token_id, char * type);
 YYSTYPE new_non_terminal_node(int token_id,YYLTYPE loc,int child_num,...);
-YYSTYPE new_terminal_node_with_value(int token_id,char * value);
+YYSTYPE new_terminal_node_with_value(int token_id,YYLTYPE loc,char * value);
 
 #endif

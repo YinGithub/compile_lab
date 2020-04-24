@@ -1,5 +1,12 @@
-
-int Wrong() 
-{ 
-    int i,j;
+int  j()
+{
+    return 9;
+}
+int j;
+int main()
+{
+   
+    int i;
+    i = j();
+    return i;
 }
